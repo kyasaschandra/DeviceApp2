@@ -21,7 +21,7 @@ import { lookupListToken, lookupLists } from './providers'
     DeviceItemComponent, 
     DeviceItemListComponent,
     BatteryLevel,
-    LoginService
+    
     
   ],
   imports: [

@@ -1,0 +1,19 @@
+<section>
+    <form [formGroup]="loginform"
+    (ngSubmit)="onLogin()">
+        <ul>
+            <li>
+                <label for="username"> Username </label>
+                <input type="text" id="username" name="username" formControlName="username" >
+                <div *ngIf="loginform.get('username').hasError('username')" class="error">UserName is Invalid</div>
+                
+            </li>
+            <li>
+                <label for="passwrod"> Password</label>
+                <input type="password" id="password" name="password" formControlName="password">
+                <div *ngIf="loginform.get('password').hasError('password')" class="error">password is Invalid</div>
+            </li>
+        </ul>
+        <button type="submit" [disabled]="!loginform.valid" routerLink="/device" > Login </button>
+    </form>
+</section>

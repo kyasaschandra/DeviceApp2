@@ -1,0 +1,98 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 200px;
+    border: 2px solid;
+    background-color: #29394b;
+    padding: 10px;
+    color: #bdc2c5;
+    margin: 0 12px 12px 0;
+  }
+  h2 {
+    font-size: 1.6em;
+    flex: 1;
+  }
+  
+  .tools {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+ 
+ 
+  .delete {
+    display: block;
+    background-color: #ec4342;
+    padding: 4px;
+    font-size: .8em;
+    border-radius: 4px;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .delete:hover {
+    display: block;
+    background-color: #42a8ec;
+    padding: 4px;
+    font-size: .8em;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .details {
+    display: block;
+    background-color: #d0e60e;
+    padding: 4px;
+    font-size: .8em;
+    border-radius: 4px;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .details:hover {
+    display: block;
+    background-color: #42a8ec;
+    padding: 4px;
+    font-size: .8em;
+    border-radius: 4px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  :host(.battery-high) {
+    border-color: #0dc084;
+  }
+
+  :host(.battery-high) > h2 {
+    color: #0dc084;
+  }
+
+  :host(.battery-low) {
+    border-color: #c00d0d;
+  }
+
+  :host(.battery-low) > h2 {
+    color: #c00d0d;
+  }
+
+  :host(.battery-avg) {
+    border-color: #c0810d;
+  }
+
+  :host(.battery-avg) > h2 {
+    color: #c0810d;
+  }
+
+  :host(.is-hovering) {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 200px;
+    border: 2px solid;
+    background-color: #0a5070;
+    padding: 10px;
+    color: #bdc2c5;
+    margin: 0 12px 12px 0;
+  }

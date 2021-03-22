@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DeviceApp2';
+  title = 'DeviceApp';
+
+  
+
+  onDeviceItemDelete(deviceItem){}
 }
