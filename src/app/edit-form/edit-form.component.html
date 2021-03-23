@@ -1,0 +1,38 @@
+<p>edit-form works!</p>
+<form *ngIf=""
+    [formGroup]="editform"
+    (ngSubmit)="onEditItem(editform.value)">
+    <ul>
+        <li>
+            <label for="name">Name    </label>
+            <input type="text" name="name" id="name" formControlName="name">
+            <div *ngIf="editform.get('name').hasError('name')" class="error">Name is Too Short, Must contain more than 2 characters</div>
+            <div *ngIf="!editform.get('name').hasError('name')"><p> </p></div>
+        </li>
+        <li>
+            <label for="ostype">OsType   </label>
+            <select name="ostype" id="ostype" formControlName="OsType">
+                <option *ngFor="let Os of lookupLists.OsTypes" [value]="Os">{{Os}}</option>
+                
+            </select>
+            <div><p> </p></div>
+        </li>
+        <li>
+            <label for="battery">Battery  </label>
+            <select name="battery" id="battery" formControlName="battery">
+                <option *ngFor="let level of lookupLists.BatteryLevels" [value]="level">{{level}}</option>
+                
+            </select>
+            <div><p> </p></div>
+        </li>
+        <li>
+            <label for="memory">Memory    </label>
+            <select name="memory" id="memory" formControlName="memory">
+                
+                <option *ngFor="let Available of lookupLists.MemoryAvailable" [value]="Available">{{Available}}</option>
+            </select>
+            <div><p> </p></div>
+        </li>
+    </ul>
+    <button type="submit" [disabled]="!editform.valid"> Save </button>
+</form>>

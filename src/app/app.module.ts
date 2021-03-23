@@ -10,7 +10,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DeviceItemFormComponent } from './device-item-form/device-item-form.component';
 import { DeviceItemComponent } from './device-item/device-item.component';
 import { DeviceItemListComponent } from './device-item-list/device-item-list.component';
-import { lookupListToken, lookupLists } from './providers'
+import { lookupListToken, lookupLists } from './providers';
+import { EditFormComponent } from './edit-form/edit-form.component'
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { lookupListToken, lookupLists } from './providers'
     DeviceItemComponent, 
     DeviceItemListComponent,
     BatteryLevel,
+    EditFormComponent,
     
     
   ],

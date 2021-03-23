@@ -4,5 +4,6 @@
         *ngFor="let deviceItem of deviceItems"
         [deviceItem]="deviceItem"
         (delete)="onDeviceItemDelete($event)"
+        (edit)="onDeviceItemEdit($event)"
         [ngClass]></app-device-item>
 </section>
