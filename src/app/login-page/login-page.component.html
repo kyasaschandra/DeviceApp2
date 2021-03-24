@@ -14,6 +14,6 @@
                 <div *ngIf="loginform.get('password').hasError('password')" class="error">password is Invalid</div>
             </li>
         </ul>
-        <button type="submit" [disabled]="!loginform.valid" routerLink="/device" > Login </button>
+        <button type="submit" [disabled]="!loginform.valid" > Login </button>
     </form>
 </section>

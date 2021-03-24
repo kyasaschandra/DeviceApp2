@@ -5,9 +5,11 @@
 </div>
 </header>
 <div id="basebody">
-    <app-login-page></app-login-page>
-    <app-device-item-form></app-device-item-form>
+    <app-login-page (login)="onChange($event)"></app-login-page>
+    
+    <app-device-item-form *ngIf=""></app-device-item-form>
     <app-device-item-list></app-device-item-list>
-    <!-- <app-edit-form></app-edit-form> -->
+    
+    
 </div>
 </section>

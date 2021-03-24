@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable,Input } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-logged = false;
+@Input() logged = false;
 permission = false;
   constructor() {localStorage.setItem("logged",JSON.stringify(this.logged)); }
   loginItems = [

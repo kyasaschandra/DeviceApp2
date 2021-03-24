@@ -1,7 +1,7 @@
-<p>edit-form works!</p>
-<form *ngIf=""
+
+<form *ngIf="called"
     [formGroup]="editform"
-    (ngSubmit)="onEditItem(editform.value)">
+    (ngSubmit)="onEditItemSend(editform.value)">
     <ul>
         <li>
             <label for="name">Name    </label>
@@ -35,4 +35,4 @@
         </li>
     </ul>
     <button type="submit" [disabled]="!editform.valid"> Save </button>
-</form>>
+</form>

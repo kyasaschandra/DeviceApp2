@@ -1,5 +1,5 @@
 import { EditFormComponent } from './../edit-form/edit-form.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DeviceItemService } from '../device-item.service';
 
 
@@ -10,7 +10,8 @@ import { DeviceItemService } from '../device-item.service';
 })
 export class DeviceItemListComponent implements OnInit {
   deviceItems;
-  constructor(private deviceItemService: DeviceItemService, private editformcomponent:EditFormComponent) { }
+  @ViewChild(EditFormComponent) editFormComponent
+  constructor(private deviceItemService: DeviceItemService) { }
 
   ngOnInit(): void {
     this.deviceItems = this.deviceItemService.get();
@@ -22,7 +23,9 @@ export class DeviceItemListComponent implements OnInit {
   }
 
   onDeviceItemEdit(deviceItem){
-    this.editformcomponent.onEditItem(deviceItem);
+    this.editFormComponent.called = true;
+    this.editFormComponent.onEditItem(deviceItem);
+    
   }
 
 

@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 import { LoginService } from '../login.service';
 
@@ -9,7 +9,7 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
- 
+ @Output() login = new EventEmitter();
   loginform: FormGroup;
   constructor(private loginItemService : LoginService, 
               private formBuilder: FormBuilder) { }
