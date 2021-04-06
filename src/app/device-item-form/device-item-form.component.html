@@ -6,9 +6,9 @@
     <ul>
         <li>
             <label for="name">Name    </label>
-            <input type="text" name="name" id="name" formControlName="name">
-            <div *ngIf="form.get('name').hasError('name')" class="error">Name is Too Short, Must contain more than 2 characters</div>
-            <div *ngIf="!form.get('name').hasError('name')"><p> </p></div>
+            <input type="text" name="name" id="name" formControlName="Name">
+            <div *ngIf="form.get('Name').hasError('Name')" class="error">Name is Too Short, Must contain more than 2 characters</div>
+            <div *ngIf="!form.get('Name').hasError('Name')"><p> </p></div>
         </li>
         <li>
             <label for="ostype">OsType   </label>
@@ -20,7 +20,7 @@
         </li>
         <li>
             <label for="battery">Battery  </label>
-            <select name="battery" id="battery" formControlName="battery">
+            <select name="battery" id="battery" formControlName="Battery">
                 <option *ngFor="let level of lookupLists.BatteryLevels" [value]="level">{{level}}</option>
                 
             </select>
@@ -28,7 +28,7 @@
         </li>
         <li>
             <label for="memory">Memory    </label>
-            <select name="memory" id="memory" formControlName="memory">
+            <select name="memory" id="memory" formControlName="Memory">
                 
                 <option *ngFor="let Available of lookupLists.MemoryAvailable" [value]="Available">{{Available}}</option>
             </select>

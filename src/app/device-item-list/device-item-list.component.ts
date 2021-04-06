@@ -20,15 +20,22 @@ export class DeviceItemListComponent implements OnInit {
 refreshList(){
   this.deviceItemService.get().subscribe(data=>{
     this.deviceItems=data;
-  })
+  });
 }
   onDeviceItemDelete(deviceItem){
-    this.deviceItemService.delete(deviceItem); 
+    if(confirm('Are You Sure?')){
+    this.deviceItemService.delete(deviceItem.Id).subscribe(data=>{
+      alert(data.toString());
+      this.refreshList();
+    }); 
+  }
+    
   }
 
   onDeviceItemEdit(deviceItem){
     this.editFormComponent.called = true;
     this.editFormComponent.onEditItem(deviceItem);
+    this.refreshList();
     
   }
 

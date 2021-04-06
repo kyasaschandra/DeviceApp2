@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DeviceItemService } from './device-item.service';
 import { LoginService } from './login.service';
@@ -32,6 +33,7 @@ import { EditFormComponent } from './edit-form/edit-form.component'
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule
     
   ],
   providers: [ {provide: lookupListToken,useValue: lookupLists}, DeviceItemService ],

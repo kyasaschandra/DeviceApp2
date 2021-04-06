@@ -15,11 +15,11 @@ export class EditFormComponent implements OnInit {
     @Inject(lookupListToken) public lookupLists,
     private deviceItemService:DeviceItemService) { 
       this.editform = this.formBuilder.group({
-        name: this.formBuilder.control('',Validators.compose([Validators.pattern('[\\w\\-\\s\\/]+')
+        Name: this.formBuilder.control('',Validators.compose([Validators.pattern('[\\w\\-\\s\\/]+')
                                         ,Validators.required,Validators.minLength(2),Validators.maxLength(20)])),
         OsType: this.formBuilder.control(''),
-        battery: this.formBuilder.control(''),
-        memory: this.formBuilder.control('')
+        Battery: this.formBuilder.control(''),
+        Memory: this.formBuilder.control('')
       });     
      }
 
@@ -29,10 +29,10 @@ export class EditFormComponent implements OnInit {
 
   onEditItem(Item){
     console.log("onEditItem");    
-    this.editform.get('name').setValue(Item.name)
+    this.editform.get('Name').setValue(Item.Name)
     this.editform.get('OsType').setValue(Item.OsType)
-    this.editform.get('battery').setValue(Item.battery)
-    this.editform.get('memory').setValue(Item.memory)
+    this.editform.get('Battery').setValue(Item.Battery)
+    this.editform.get('Memory').setValue(Item.Memory)
     this.x = Item;
   }
 
@@ -41,5 +41,8 @@ export class EditFormComponent implements OnInit {
   onEditItemSend(ItemFromForm){    
     
     this.called = false;
-    this.deviceItemService.edit(ItemFromForm);}
+
+    this.deviceItemService.edit(ItemFromForm).subscribe(data=>{
+      alert(data.toString());
+    });}
 }

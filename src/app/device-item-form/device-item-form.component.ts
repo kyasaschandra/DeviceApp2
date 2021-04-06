@@ -26,28 +26,28 @@ export class DeviceItemFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name: this.formBuilder.control("Device",Validators.compose([Validators.pattern('[\\w\\-\\s\\/]+')
+      Name: this.formBuilder.control("Device",Validators.compose([Validators.pattern('[\\w\\-\\s\\/]+')
                                                         ,Validators.required,Validators.minLength(2),Validators.maxLength(20)])),
       OsType: this.formBuilder.control(null),
-      battery: this.formBuilder.control(null),
-      memory: this.formBuilder.control(null)
+      Battery: this.formBuilder.control(null),
+      Memory: this.formBuilder.control(null)
     });
 
     
   }
-
-  // nameValidator(control: FormControl){
-  //   if (control.value.trim().length < 2){
-  //     return {name: true};
-  //   }
-  //   else{
-  //     return null;
-  //   }
-  // }
   
   onSubmit(deviceItem){
     console.log(deviceItem);
-    this.deviceItemService.add(deviceItem);
+    var jsonFormat = {
+                      Id : deviceItem.Id,
+                      Name : deviceItem.Name,
+                      OsType : deviceItem.OsType,
+                      Battery : deviceItem.Battery,
+                      Memory : deviceItem.Memory
+                      }
+    this.deviceItemService.add(jsonFormat).subscribe(res=>{
+      alert(res.toString());
+    });
     this.New = false;
   }
 

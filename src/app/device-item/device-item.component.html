@@ -1,10 +1,10 @@
-<h2>{{ deviceItem.name | uppercase}}</h2>
+<h2>{{ deviceItem.Name | uppercase}}</h2>
 <div *ngIf="deviceItem.OsType">OsType: {{deviceItem.OsType}}</div>
 <div *ngIf="!deviceItem.OsType">OsType: Unavailable</div>
-<div *ngIf="deviceItem.battery">Battery: {{deviceItem.battery}}</div>
-<div *ngIf="!deviceItem.battery">Battery: Unavailable</div>
-<div *ngIf="deviceItem.memory">Memory: {{deviceItem.memory}}</div>
-<div *ngIf="!deviceItem.memory">Memory: Unavailable</div>
+<div *ngIf="deviceItem.Battery">Battery: {{deviceItem.Battery}}</div>
+<div *ngIf="!deviceItem.Battery">Battery: Unavailable</div>
+<div *ngIf="deviceItem.Memory">Memory: {{deviceItem.Memory}}</div>
+<div *ngIf="!deviceItem.Memory">Memory: Unavailable</div>
 <div class="tools">
   
   <a (click)="onDelete()" class="delete">
