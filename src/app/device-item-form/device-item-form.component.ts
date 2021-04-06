@@ -1,3 +1,4 @@
+import { LoginService } from './../login.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { DeviceItemService } from '../device-item.service';
@@ -12,12 +13,14 @@ import {lookupListToken} from '../providers';
 export class DeviceItemFormComponent implements OnInit {
   form: FormGroup;
   New=false;
+  logged = this.loginService.logged;
 
   
 
   constructor(private formBuilder: FormBuilder,
     private deviceItemService: DeviceItemService,
-    @Inject(lookupListToken) public lookupLists) {}
+    @Inject(lookupListToken) public lookupLists,
+    private loginService:LoginService) {}
 
    
 
@@ -50,5 +53,9 @@ export class DeviceItemFormComponent implements OnInit {
 
   onNew(){
     this.New=true;
+  }
+
+  onLogout(){
+    this.logged = false;
   }
 }

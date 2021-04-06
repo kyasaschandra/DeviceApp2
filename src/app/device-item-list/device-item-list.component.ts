@@ -9,15 +9,19 @@ import { DeviceItemService } from '../device-item.service';
   styleUrls: ['./device-item-list.component.scss']
 })
 export class DeviceItemListComponent implements OnInit {
-  deviceItems;
+  deviceItems:any=[];
   @ViewChild(EditFormComponent) editFormComponent
   constructor(private deviceItemService: DeviceItemService) { }
 
   ngOnInit(): void {
-    this.deviceItems = this.deviceItemService.get();
+    this.refreshList();
   }
   
-
+refreshList(){
+  this.deviceItemService.get().subscribe(data=>{
+    this.deviceItems=data;
+  })
+}
   onDeviceItemDelete(deviceItem){
     this.deviceItemService.delete(deviceItem); 
   }

@@ -41,5 +41,5 @@ export class EditFormComponent implements OnInit {
   onEditItemSend(ItemFromForm){    
     
     this.called = false;
-    this.deviceItemService.edit(this.x,ItemFromForm);}
+    this.deviceItemService.edit(ItemFromForm);}
 }

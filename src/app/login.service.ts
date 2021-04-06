@@ -32,7 +32,12 @@ permissionDetails = [
 ];
 
 login(loginItem){
+  console.log(loginItem);
+  console.log(this.loginItems);
+  
   var index = this.loginItems.indexOf(loginItem);
+  console.log(index);
+  
   if (index>=0){
     this.logged = true;
     this.permission = this.permissionDetails[index]['permission']
@@ -42,6 +47,8 @@ login(loginItem){
   }
   localStorage.removeItem("logged");
   localStorage.setItem("logged",JSON.stringify(this.logged));
+  console.log([this.logged,this.permission]);
+  
   return [this.logged,this.permission];
 }
 

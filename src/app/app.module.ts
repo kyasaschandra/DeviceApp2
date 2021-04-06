@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { DeviceItemService } from './device-item.service';
 import { LoginService } from './login.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,9 +30,11 @@ import { EditFormComponent } from './edit-form/edit-form.component'
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
-  providers: [ {provide: lookupListToken,useValue: lookupLists} ],
+  providers: [ {provide: lookupListToken,useValue: lookupLists}, DeviceItemService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,7 +28,7 @@ export class LoginPageComponent implements OnInit {
 
 
   onLogin(){
-    console.log(this.loginform.value)
+    //console.log(this.loginform.value)
     var x = this.loginItemService.login(this.loginform.value);
     this.logged =x[0]
     this.permission=x[1]
